@@ -3,3 +3,6 @@ module.exports = catchAsync = (fun)=>{  //this method only catch asyncronous Fun
        fun(req,res,next1).catch((err)=> next1(err));  // this is promise 
     }                          // Allela Error
   };
+
+
+                

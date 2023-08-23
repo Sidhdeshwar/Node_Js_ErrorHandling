@@ -49,9 +49,12 @@ const updateProduct = catchAsync(async (req, res, next) => {
       runValidators: true,
     }
   );
+  
   if (!updateProd) {
+   console.log("QQQQQQ")
     return next(new createError("Not Found at Given ID", 404));
   }
+
   res.status(200).json({
     status: "Success",
     updateProd,
