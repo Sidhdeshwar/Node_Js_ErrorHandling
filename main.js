@@ -2,13 +2,18 @@ const express = require("express");
 const MainErrorClass = require("./utilities/craeteError");
 const app = express();
 const routes = require("./routes/index.routes");
+const cors = require("cors");
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log("Middleware SID MY");
   next();
 });
+
+app.use("/uploads", express.static("uploads"));
 
 app.use("/app", routes);
 // ^ Default Route

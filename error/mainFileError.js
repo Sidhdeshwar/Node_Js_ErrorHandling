@@ -57,7 +57,7 @@ module.exports = (err,req,res,next)=>{
          console.log("Z")
         res.status(err.statusCode).json({
             status:err.status,
-            message : err.message
+            message : err
         })
     }
    }
